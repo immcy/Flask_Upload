@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {
+        text-decoration:none;
+        font-size:20px;
+        }
+        .alert {
+        background: red;
+        }
+    </style>
+</head>
+<body>
+
+<form method="POST" enctype="multipart/form-data" action="/">
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+</form>
+<a href="#">File Menu</a>
+
+<div class="alert">
+    {% for message in get_flashed_messages() %}
+    {{ message }}
+    {% endfor %}
+</div>
+<p>
+    {% if filename%}
+    {{ filename }} Upload Success!
+    {% endif %}
+</p>
+
+</body>
+</html>
